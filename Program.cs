@@ -24,13 +24,35 @@ void ExibirMenu()
     Console.Write("\nEscolha uma opção: ");
     string opcao = Console.ReadLine()!;
 
-    if (int.Parse(opcao) == 1)
+    // if (int.Parse(opcao) == 1)
+    // {
+    //     Console.WriteLine($"Você digitou a opção: {opcao}");
+    // }
+    // else if (int.Parse(opcao) == 2)
+    // {
+    //     Console.WriteLine($"Você digitou a opção: {opcao}");
+    // }
+
+    switch (int.Parse(opcao))
     {
-        Console.WriteLine($"Você digitou a opção: {opcao}");
-    }
-    else if (int.Parse(opcao) == 2)
-    {
-        Console.WriteLine($"Você digitou a opção: {opcao}");
+        case 1:
+            Console.WriteLine($"Você digitou a opção: {opcao}");
+            break;
+        case 2:
+            Console.WriteLine($"Você digitou a opção: {opcao}");
+            break;
+        case 3:
+            Console.WriteLine($"Você digitou a opção: {opcao}");
+            break;
+        case 4:
+            Console.WriteLine($"Você digitou a opção: {opcao}");
+            break;
+        case -1:
+            Console.WriteLine("Tchau Tchau :)");
+            break;
+        default:
+            Console.WriteLine("Opção inválida!");
+            break;
     }
 }
 
