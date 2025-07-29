@@ -2,6 +2,7 @@
 
 
 
+
 string mensagem = "Boas Vindas ao Screen Sound";
 // List<string> listaDeBandas = new List<string>();
 Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>();
@@ -44,7 +45,7 @@ void ExibirMenu()
             AvaliarUmaBanda();
             break;
         case 4:
-            Console.WriteLine($"Você digitou a opção: {opcao}");
+            ExibirMediaDaBanda();
             break;
         case -1:
             Console.WriteLine("Tchau Tchau :)");
@@ -112,6 +113,33 @@ void AvaliarUmaBanda()
         Console.Clear();
         ExibirMenu();
 
+    }
+}
+
+void ExibirMediaDaBanda()
+{
+    Console.Clear();
+    Console.Write("Deseja saber a média de qual banda: ");
+    string nomeDaBandaEscolhida = Console.ReadLine()!;
+
+    if (bandasRegistradas.ContainsKey(nomeDaBandaEscolhida))
+    {
+        List<int> avaliacaoDaBanda = bandasRegistradas[nomeDaBandaEscolhida];
+        double mediaDaBanda = avaliacaoDaBanda.Average();
+        Console.WriteLine($"A média da banda {nomeDaBandaEscolhida} é {mediaDaBanda}");
+        Console.WriteLine("\nDigite qualquer tecla para voltar ao menu principal");
+        Console.ReadKey();
+        Console.Clear();
+        ExibirMenu();
+
+    }
+    else
+    {
+        Console.WriteLine($"A banda {nomeDaBandaEscolhida} não foi encontrada!");
+        Console.WriteLine("\nDigite qualquer tecla para voltar ao menu principal");
+        Console.ReadKey();
+        Console.Clear();
+        ExibirMenu();
     }
 }
 
