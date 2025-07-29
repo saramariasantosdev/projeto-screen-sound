@@ -1,7 +1,7 @@
 ﻿// Screen Sound
 
 // Função sem retorno: void
-void ExibirMensagem()
+void ExibirLogo()
 {
     Console.WriteLine(@"
 ░██████╗░█████╗░██████╗░███████╗███████╗███╗░░██╗  ░██████╗░█████╗░██╗░░░██╗███╗░░██╗██████╗░
@@ -24,19 +24,10 @@ void ExibirMenu()
     Console.Write("\nEscolha uma opção: ");
     string opcao = Console.ReadLine()!;
 
-    // if (int.Parse(opcao) == 1)
-    // {
-    //     Console.WriteLine($"Você digitou a opção: {opcao}");
-    // }
-    // else if (int.Parse(opcao) == 2)
-    // {
-    //     Console.WriteLine($"Você digitou a opção: {opcao}");
-    // }
-
     switch (int.Parse(opcao))
     {
         case 1:
-            Console.WriteLine($"Você digitou a opção: {opcao}");
+            RegistrarBanda();
             break;
         case 2:
             Console.WriteLine($"Você digitou a opção: {opcao}");
@@ -56,5 +47,17 @@ void ExibirMenu()
     }
 }
 
-ExibirMensagem();
+void RegistrarBanda()
+{
+    Console.Clear();
+    Console.WriteLine("Registro de bandas");
+    Console.Write("Digite a banda que você deseja registrar: ");
+    string nomeDaBanda = Console.ReadLine()!;
+    Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso!");
+    Thread.Sleep(2000);
+    Console.Clear();
+    ExibirLogo();
+    ExibirMenu();
+}
+ExibirLogo();
 ExibirMenu();
