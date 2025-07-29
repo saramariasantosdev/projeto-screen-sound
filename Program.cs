@@ -1,6 +1,8 @@
 ﻿// Screen Sound
 
-// Função sem retorno: void
+string mensagem = "Boas Vindas ao Screen Sound";
+List<string> ListaDeBandas = new List<string>();
+
 void ExibirLogo()
 {
     Console.WriteLine(@"
@@ -10,7 +12,6 @@ void ExibirLogo()
 ░╚═══██╗██║░░██╗██╔══██╗██╔══╝░░██╔══╝░░██║╚████║  ░╚═══██╗██║░░██║██║░░░██║██║╚████║██║░░██║
 ██████╔╝╚█████╔╝██║░░██║███████╗███████╗██║░╚███║  ██████╔╝╚█████╔╝╚██████╔╝██║░╚███║██████╔╝
 ╚═════╝░░╚════╝░╚═╝░░╚═╝╚══════╝╚══════╝╚═╝░░╚══╝  ╚═════╝░░╚════╝░░╚═════╝░╚═╝░░╚══╝╚═════╝░");
-    string mensagem = "Boas Vindas ao Screen Sound";
     Console.WriteLine(mensagem);
 }
 void ExibirMenu()
@@ -53,6 +54,7 @@ void RegistrarBanda()
     Console.WriteLine("Registro de bandas");
     Console.Write("Digite a banda que você deseja registrar: ");
     string nomeDaBanda = Console.ReadLine()!;
+    ListaDeBandas.Add(nomeDaBanda);
     Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso!");
     Thread.Sleep(2000);
     Console.Clear();
