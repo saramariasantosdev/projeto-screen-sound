@@ -2,7 +2,7 @@
 
 
 string mensagem = "Boas Vindas ao Screen Sound";
-List<string> ListaDeBandas = new List<string>();
+List<string> listaDeBandas = new List<string>();
 
 void ExibirLogo()
 {
@@ -55,7 +55,7 @@ void RegistrarBanda()
     Console.WriteLine("Registro de bandas");
     Console.Write("Digite a banda que você deseja registrar: ");
     string nomeDaBanda = Console.ReadLine()!;
-    ListaDeBandas.Add(nomeDaBanda);
+    listaDeBandas.Add(nomeDaBanda);
     Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso!");
     Thread.Sleep(2000);
     Console.Clear();
@@ -68,10 +68,11 @@ void MostrarBandasRegistradas()
     Console.Clear();
     Console.WriteLine("Exibindo todas as bandas registradas\n");
 
-    for (int i = 0; i < ListaDeBandas.Count; i++)
+    foreach (string banda in listaDeBandas)
     {
-        Console.WriteLine($"Banda: {ListaDeBandas[i]}");
+        Console.WriteLine($"Banda {banda}");
     }
+
     Console.WriteLine("\nDigite qualquer tecla para voltar ao menu principal");
     Console.ReadKey();
     Console.Clear();
