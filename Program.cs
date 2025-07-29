@@ -1,6 +1,7 @@
 ﻿// Screen Sound
 
 
+
 string mensagem = "Boas Vindas ao Screen Sound";
 // List<string> listaDeBandas = new List<string>();
 Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>();
@@ -39,7 +40,7 @@ void ExibirMenu()
             MostrarBandasRegistradas();
             break;
         case 3:
-            Console.WriteLine($"Você digitou a opção: {opcao}");
+            AvaliarUmaBanda();
             break;
         case 4:
             Console.WriteLine($"Você digitou a opção: {opcao}");
@@ -52,6 +53,7 @@ void ExibirMenu()
             break;
     }
 }
+
 
 void RegistrarBanda()
 {
@@ -83,6 +85,28 @@ void MostrarBandasRegistradas()
     Console.Clear();
     ExibirLogo();
     ExibirMenu();
+}
+
+void AvaliarUmaBanda()
+{
+    Console.Clear();
+    ExibirTituloDaOpcao("Avaliar banda");
+    Console.Write("Digite o nome da banda que deseja avaliar: ");
+    string nomeDaBandaAvaliada = Console.ReadLine()!;
+    if (bandasRegistradas.ContainsKey(nomeDaBandaAvaliada))
+    {
+
+    }
+    else
+    {
+        Console.WriteLine($"A banda {nomeDaBandaAvaliada} não foi encontrada!");
+        Console.WriteLine("\nDigite qualquer tecla para voltar ao menu principal");
+        Console.ReadKey();
+        Console.Clear();
+        ExibirLogo();
+        ExibirMenu();
+
+    }
 }
 
 void ExibirTituloDaOpcao(string titulo)
